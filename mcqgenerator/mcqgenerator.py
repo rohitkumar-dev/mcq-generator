@@ -12,13 +12,9 @@ from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
 from langchain.chains import SequentialChain
 
-# Load environment variables from the .env file
 load_dotenv()
 
-# Access the environment variables just like you would with os.environ
 key = os.getenv("OPENAI_API_KEY")
-
-print("Value of MY_VARIABLE:", key)
 
 llm = ChatOpenAI(openai_api_key=key,model_name="gpt-3.5-turbo", temperature=0.3)
 
