@@ -16,7 +16,7 @@ with open('Response.json', 'r') as file:
 
 #creating a title for the app
 st.write("<h1 style='text-align: center;'>🤖 MCQs Creator Application With LangChain And OpenAI 🤖</h1>",unsafe_allow_html=True)
-st.subheader("Note: This app act as an expert MCQs maker, it is assumed that you provide the appropriate subject related to data to generate the quiz for students.")
+st.caption("Note: This app act as an expert MCQs maker, it is assumed that you provide the appropriate subject related to data to generate the quiz for students.")
 
 #Create a form using st.form
 with st.form("user_inputs"):
