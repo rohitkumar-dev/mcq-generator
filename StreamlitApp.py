@@ -15,7 +15,7 @@ with open('Response.json', 'r') as file:
     RESPONSE_JSON = json.load(file)
 
 #creating a title for the app
-st.title("MCQs Creator Application with LangChain 🦜⛓️")
+st.write("<h1 style='text-align: center;'>🤖 MCQs Creator Application With LangChain And OpenAI 🤖</h1>",unsafe_allow_html=True)
 
 #Create a form using st.form
 with st.form("user_inputs"):
@@ -71,7 +71,10 @@ with st.form("user_inputs"):
                             df=pd.DataFrame(table_data)
                             df.index=df.index+1
                             st.table(df)
-                            #Display the review in atext box as well
+
+                            
+
+                            #Display the review in a text box as well
                             st.text_area(label="Review", value=response["review"])
                         else:
                             st.error("Error in the table data")
@@ -79,5 +82,11 @@ with st.form("user_inputs"):
                 else:
                     st.write(response)
 
-
+if 'df' in locals():
+    download_button = st.download_button(
+        label="Download MCQ Data",
+        data=df.to_csv().encode('utf-8'),
+        file_name=f"{subject}_MCQ_Data.csv",
+        key='download_button'
+    )
 
