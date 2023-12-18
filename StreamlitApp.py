@@ -16,14 +16,15 @@ with open('Response.json', 'r') as file:
 
 #creating a title for the app
 st.write("<h1 style='text-align: center;'>🤖 MCQs Creator Application With LangChain And OpenAI 🤖</h1>",unsafe_allow_html=True)
+st.subheader("Note: This app act as an expert MCQs maker, it is assumed that you provide the appropriate subject related to data to generate the quiz for students.")
 
 #Create a form using st.form
 with st.form("user_inputs"):
     #File Upload
-    uploaded_file=st.file_uploader("Uplaod a PDF or txt file")
+    uploaded_file=st.file_uploader("Uplaod a PDF or TXT file")
 
     #Input Fields
-    mcq_count=st.number_input("No. of MCQs", min_value=3, max_value=50)
+    mcq_count=st.number_input("Number of MCQs", min_value=3, max_value=50)
 
     #Subject
     subject=st.text_input("Insert Subject",max_chars=20)
